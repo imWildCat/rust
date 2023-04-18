@@ -140,6 +140,11 @@ pub(crate) fn create_object_file(sess: &Session) -> Option<write::Object<'static
     };
 
     let mut file = write::Object::new(binary_format, architecture, endianness);
+    if sess.target.llvm_target.ends_with("-macabi") {
+        let mut version = write::MachOBuildVersion::default();
+        version.platform = object::macho::PLATFORM_MACCATALYST;
+        file.set_macho_build_version(version);
+    }
     let e_flags = match architecture {
         Architecture::Mips => {
             let arch = match sess.target.options.cpu.as_ref() {
