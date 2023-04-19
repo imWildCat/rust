@@ -43,6 +43,6 @@ rustc_target = { path = "../rustc_target" }
 rustc_session = { path = "../rustc_session" }
 
 [dependencies.object]
-version = "0.30.1"
+version = "0.31.0"
 default-features = false
 features = ["read_core", "elf", "macho", "pe", "unaligned", "archive", "write"]
