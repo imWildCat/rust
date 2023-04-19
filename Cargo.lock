@@ -2226,6 +2226,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "object"
+version = "0.31.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d08090140cfee2e09897d6be320b47a45b79eb68b414de87130f9532966e2f1d"
+dependencies = [
+ "crc32fast",
+ "hashbrown 0.13.1",
+ "indexmap",
+ "memchr",
+]
+
+[[package]]
 name = "odht"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3104,7 +3116,7 @@ dependencies = [
  "itertools",
  "jobserver",
  "libc",
- "object 0.30.1",
+ "object 0.31.0",
  "pathdiff",
  "regex",
  "rustc_arena",
